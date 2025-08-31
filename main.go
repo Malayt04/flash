@@ -1,8 +1,16 @@
-package  main
+package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+
+	"github.com/Malayt04/flash/cmd"
+)
 
 func  main(){
-	fmt.Println("Hello World")
+	if err := cmd.Execute(); err != nil{
+		fmt.Println(err)
+		os.Exit(1)
+	}	
 }
 
